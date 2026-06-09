@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hector - Level 30</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Orbitron',sans-serif;
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+
+    background:
+    linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.85)),
+    repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        rgba(0,255,255,.08) 40px
+    ),
+    repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 39px,
+        rgba(0,255,255,.08) 40px
+    );
+
+    background-color:#050505;
+}
+
+section{
+    padding:70px 20px;
+}
+
+.logo{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.nombre{
+    font-size:38px;
+    font-weight:800;
+    color:#39ff14;
+
+    text-shadow:
+    0 0 10px #39ff14,
+    0 0 20px #39ff14;
+}
+
+.level{
+    margin-top:15px;
+    color:#00d9ff;
+    font-size:18px;
+    letter-spacing:3px;
+}
+
+.fecha{
+    margin-top:35px;
+
+    background:#39ff14;
+    color:black;
+
+    display:inline-block;
+
+    padding:18px 25px;
+
+    font-weight:bold;
+
+    border-radius:8px;
+
+    box-shadow:
+    0 0 15px #39ff14,
+    0 0 40px #39ff14;
+}
+
+.titulo{
+    font-size:24px;
+    color:#00d9ff;
+    margin-bottom:35px;
+    letter-spacing:4px;
+}
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.box{
+    width:85px;
+    height:110px;
+
+    background:#00bfff;
+
+    border-radius:25px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    box-shadow:
+    0 0 15px #00d9ff;
+}
+
+.numero{
+    font-size:30px;
+    font-weight:800;
+}
+
+.texto{
+    font-size:11px;
+}
+
+.card{
+    max-width:500px;
+    margin:auto;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(0,255,255,.2);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    backdrop-filter:blur(5px);
+}
+
+.card h2{
+    color:#39ff14;
+    margin-bottom:20px;
+}
+
+.card p{
+    font-size:22px;
+    line-height:1.5;
+}
+
+.btn{
+    margin-top:25px;
+    display:inline-block;
+
+    padding:15px 30px;
+
+    background:#39ff14;
+    color:black;
+
+    text-decoration:none;
+    font-weight:bold;
+
+    border-radius:50px;
+
+    box-shadow:
+    0 0 15px #39ff14;
+}
+
+footer{
+    padding:50px 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<section>
+
+<div class="logo">🎮</div>
+
+<h1 class="nombre">HECTOR</h1>
+
+<p class="level">LEVEL 30 UNLOCKED</p>
+
+<div class="fecha">
+SÁBADO 4 DE JULIO DE 2026
+</div>
+
+</section>
+
+<section>
+
+<h2 class="titulo">FALTAN</h2>
+
+<div class="countdown">
+
+<div class="box">
+<div class="numero" id="dias">00</div>
+<div class="texto">DÍAS</div>
+</div>
+
+<div class="box">
+<div class="numero" id="horas">00</div>
+<div class="texto">HORAS</div>
+</div>
+
+<div class="box">
+<div class="numero" id="minutos">00</div>
+<div class="texto">MIN</div>
+</div>
+
+<div class="box">
+<div class="numero" id="segundos">00</div>
+<div class="texto">SEG</div>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>📍 UBICACIÓN</h2>
+
+<p>
+Salón Empleados de Comercio
+</p>
+
+<a class="btn" href="#">
+VER MAPA
+</a>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>👕 DRESS CODE</h2>
+
+<p>
+CASUAL
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>✅ CONFIRMAR</h2>
+
+<a
+class="btn"
+href="https://wa.me/5492966XXXXXX?text=Confirmo%20mi%20asistencia">
+CONFIRMAR ASISTENCIA
+</a>
+
+</div>
+
+</section>
+
+<script>
+
+const fechaEvento =
+new Date("July 4, 2026 21:00:00").getTime();
+
+setInterval(() => {
+
+const ahora = new Date().getTime();
+
+const diferencia = fechaEvento - ahora;
+
+const dias = Math.floor(diferencia/(1000*60*60*24));
+const horas = Math.floor((diferencia%(1000*60*60*24))/(1000*60*60));
+const minutos = Math.floor((diferencia%(1000*60*60))/(1000*60));
+const segundos = Math.floor((diferencia%(1000*60))/1000);
+
+document.getElementById("dias").innerHTML = dias;
+document.getElementById("horas").innerHTML = horas;
+document.getElementById("minutos").innerHTML = minutos;
+document.getElementById("segundos").innerHTML = segundos;
+
+},1000);
+
+</script>
+
+</body>
+</html>
